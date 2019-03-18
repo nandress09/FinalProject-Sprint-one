@@ -72,6 +72,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Character.cs" />
+    <Compile Include="Model\GameMapLocation.cs" />
+    <Compile Include="Model\Location.cs" />
+    <Compile Include="Model\Map.cs" />
     <Compile Include="Model\Player.cs" />
     <Compile Include="PresentationLayer\GameSessionView.xaml.cs">
       <DependentUpon>GameSessionView.xaml</DependentUpon>

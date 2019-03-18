@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:WpfApp1.PresentationLayer"
         mc:Ignorable="d"
         Background="DarkRed"
-        Width="1000"
-        Height="700"
+        Width="1100"
+        Height="800"
         WindowStartupLocation="CenterScreen"
         WindowStyle="SingleBorderWindow">
     <Window.Resources>
@@ -116,30 +116,8 @@
                 </Grid.ColumnDefinitions>
                 <Border
                     Grid.Row="0"
-                    Grid.Column="0"
-                    Margin="0,0,0,146"
-                    Style="{StaticResource BorderStyle}">
-                    <Label 
-                        Content="This is room one."
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Center"
-                        Style="{StaticResource MainPanelLabelStyle}" Margin="8,56,12,79" Height="187" Width="190"/>
-                </Border>
-                <Border
-                    Grid.Row="0"
-                    Grid.Column="0"
-                    Margin="-1,259,1,11"
-                    Style="{StaticResource BorderStyle}">
-                    <Label 
-                        Content="How will you interact"
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Center"
-                        Style="{StaticResource MainPanelLabelStyle}" Margin="4,31,6,29" Height="63" Width="200"/>
-                </Border>
-                <Border
-                    Grid.Row="0"
                     Grid.Column="1"
-                    Margin="7,0,8,40"
+                    Margin="7,0,8,100"
                     Style="{StaticResource BorderStyle}" Height="411" VerticalAlignment="Bottom">
 
                     <!---photo placement-->
@@ -158,32 +136,37 @@
                         </StackPanel>
                     </Grid>
                 </Border>
-                <Border
+
+                <!--Select your room buttons-->
+                <StackPanel
                     Grid.Row="0"
-                    Grid.Column="2"
-                    Margin="0,0,0,146"
-                    Style="{StaticResource BorderStyle}">
-                    <Label 
-                        Content="Data Collected"
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Center"
-                        Style="{StaticResource MainPanelLabelStyle}"/>
-                </Border>
-                <Border
-                    Grid.Row="0"
-                    Grid.Column="2"
-                    Margin="2,259,-1,11"
-                    Style="{StaticResource BorderStyle}">
-                    <Label 
-                        Content="Village trust here"
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Center"
-                        Style="{StaticResource MainPanelLabelStyle}" Margin="4,31,6,29" Height="63" Width="200"/>
-                </Border>
+                    Orientation="Horizontal">
+                </StackPanel>
+                <Label
+                    HorizontalAlignment="Center"
+                    Margin="14,34,48,476"
+                    Content="Choose your room" Width="200"
+                    Background="#FFF9F9F9"
+                    FontSize="20" FontFamily="Times New Roman"/>
+
+
+                <StackPanel
+                    Orientation="Horizontal"
+                    Margin="1,90,9,410">
+                    <Button
+                        Content="Ask Priest"
+                        FontSize="14"
+                        Background="White"
+                        Style="{StaticResource MainPanelButtonStyle}"
+                        Click="ChurchPriestHelp"/>
+                </StackPanel>
+
+
                 <Border
                     Grid.Row="1"
                     Grid.ColumnSpan="3"
                     Style="{StaticResource BorderStyle}">
+                    <!--this is where the breakdown for the bottom of the screen starts-->
                     <Grid
                         Margin="5">
                         <Grid.ColumnDefinitions>

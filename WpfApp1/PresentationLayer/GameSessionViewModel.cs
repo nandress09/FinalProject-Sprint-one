@@ -18,10 +18,21 @@ namespace WpfApp1.PresentationLayer
 {
     public class GameSessionViewModel
     {
+        #region ENUMS
+
+
+
+        #endregion
+
+        #region FIELDS
+
+        private Player _player;
         private List<string> _messages;
         private DateTime _gameStartTime;
-        private Player _player;
-       
+
+        #endregion
+
+        #region PROPERTIES
 
         public Player Player
         {
@@ -34,13 +45,17 @@ namespace WpfApp1.PresentationLayer
             get { return FormatMessagesForViewer(); }
         }
 
+        #endregion
+
+        #region CONSTRUCTORS
+
         public GameSessionViewModel()
         {
 
         }
 
-        public GameSessionViewModel (
-            Player player, 
+        public GameSessionViewModel(
+            Player player,
             List<string> initialMessages)
         {
             _player = player;
@@ -48,30 +63,51 @@ namespace WpfApp1.PresentationLayer
             InitializeView();
         }
 
+        #endregion
+
+        #region METHODS
+
+        /// <summary>
+        /// initial setup of the game session view
+        /// </summary>
         private void InitializeView()
         {
             _gameStartTime = DateTime.Now;
         }
 
+        /// <summary>
+        /// generates a sting of mission messages with time stamp with most current first
+        /// </summary>
+        /// <returns>string of formated mission messages</returns>
         private string FormatMessagesForViewer()
         {
-            List<string> lifeMessages = new List<string>();
+            List<string> lifoMessages = new List<string>();
 
             for (int index = 0; index < _messages.Count; index++)
             {
-                lifeMessages.Add($" <T:{GameTime().ToString(@"hh\:mm\:ss")} " + _messages[index]);
+                lifoMessages.Add($" <T:{GameTime().ToString(@"hh\:mm\:ss")}> " + _messages[index]);
             }
 
-            lifeMessages.Reverse();
+            lifoMessages.Reverse();
 
-            return string.Join("\n\n", lifeMessages);
+            return string.Join("\n\n", lifoMessages);
         }
 
+        /// <summary>
+        /// running time of game
+        /// </summary>
+        /// <returns></returns>
         private TimeSpan GameTime()
         {
             return DateTime.Now - _gameStartTime;
         }
 
+        #endregion
 
+        #region EVENTS
+
+
+
+        #endregion
     }
 }

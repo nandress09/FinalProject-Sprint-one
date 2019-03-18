@@ -16,8 +16,8 @@ namespace WpfApp1.DataLayer
                 Id = 1,
                 Name = "Jerry",
                 Age = 43,
-                JobTitle = Player.JobTitleName.Bear,
-                Race = Character.RaceType.Nuetral,
+                JobTitle = Player.JobTitleName.Explorer,
+                Race = Character.RaceType.Thorian,
                 Health = 100,
                 Lives = 3,
                 ExperiencePoints = 0,
@@ -34,5 +34,7 @@ namespace WpfApp1.DataLayer
                 "\t As a predator of the forest, you're generally left alone",
             };
         }
+
+       
     }
 }
